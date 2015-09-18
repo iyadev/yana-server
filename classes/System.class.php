@@ -172,6 +172,7 @@ class System{
 			'1a01041' => array('ram'=>'1024','version'=>'1.0','type'=>'b2','revision'=>'1a01041'),
 			'a21041' => array('ram'=>'1024','version'=>'1.0','type'=>'b2','revision'=>'a21041')
 		);
+		if($infos['Hardware']=='sun7i') return array('ram'=>'x','version'=>'x','type'=>'AllWinnerBoard');
 		if(PHP_OS=='WINNT') $infos['Revision'] = '0002';//for dev mode on windows only
 		return isset($deductionArray[$infos['Revision']]) ? $deductionArray[$infos['Revision']] :array('ram'=>'0','version'=>'0','type'=>'unknown','revision'=>$infos['Revision']);
 	}
